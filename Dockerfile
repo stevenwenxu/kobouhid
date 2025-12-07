@@ -50,9 +50,6 @@ WORKDIR /build/kernel
 RUN make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- oldconfig
 RUN make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc)
 
-# Build HID-related modules (UHID, HID_GENERIC, etc.)
-RUN make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- drivers/hid/uhid.ko
-
 # Create output directory for modules
 RUN mkdir -p /build/output && \
     cp $(find . -name "*.ko") /build/output/
