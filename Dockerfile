@@ -26,9 +26,9 @@ WORKDIR /build
 #    && rm kernel.tar.bz2
 
 # Official Linux kernel
-RUN wget -O kernel.tar.bz2 https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.1.15.tar.gz \
+RUN wget -O kernel.tar.bz2 https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.9.77.tar.gz \
     && tar xf kernel.tar.bz2 \
-    && mv linux-4.1.15 kernel \
+    && mv linux-4.9.77 kernel \
     && rm kernel.tar.bz2
 
 RUN wget -O xcomp.tar.xz https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabihf/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz && \

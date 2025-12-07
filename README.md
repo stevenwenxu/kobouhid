@@ -1,14 +1,14 @@
-# Kobo Clara 2E UHID Kernel Module
+# Kobo Clara BW UHID Kernel Module
 
-This repository provides a minimal Docker-based build setup and GitHub Actions workflow to cross-compile the UHID kernel module (`uhid.ko`) for the Kobo Clara 2E e-reader (i.MX6SLL ARM platform).
+This repository provides a minimal Docker-based build setup and GitHub Actions workflow to cross-compile the UHID kernel module (`uhid.ko`) for the Kobo Clara BW e-reader.
 
 This was partially vibe coded based on the instructions in [this repository](https://github.com/jmacindoe/kobo-kernel-modules/tree/main), and [this repository](https://github.com/tylpk1216/kobo-libra2-uhid-module) with goose and gpt-4o.
 
 ## Contents
 
-- `Dockerfile` - builds an Ubuntu 22.04 image, fetches the Kobo Clara 2E kernel source, applies small patch fixes, and compiles only the HID subsystem modules.  
-- `.github/workflows/build.yml` - GitHub Actions workflow that builds the Docker image, extracts `uhid.ko`, and uploads it as an artifact.  
-- `config` - the kernel configuration used on the device (uncompressed).  
+- `Dockerfile` - builds an Ubuntu 22.04 image, fetches the Kobo Clara 2E kernel source, applies small patch fixes, and compiles only the HID subsystem modules.
+- `.github/workflows/build.yml` - GitHub Actions workflow that builds the Docker image, extracts `uhid.ko`, and uploads it as an artifact.
+- `config` - the kernel configuration used on the device (uncompressed).
 
 ## Usage
 
@@ -47,7 +47,7 @@ To view/download the artifact:
 
 ## License
 
-This repository (**excluding** the original Linux kernel source) is licensed under the GNU General Public License v2.0 (GPL-2.0-only).  
+This repository (**excluding** the original Linux kernel source) is licensed under the GNU General Public License v2.0 (GPL-2.0-only).
 
 The patches applied to the upstream kernel are small fixes to allow cross-compilation; the resulting modules are derived works of the Linux kernel, which is itself licensed under GPL-2.0-only.
 
